@@ -1,0 +1,134 @@
+$black: #262526;
+$light: #f2e1c2;
+$back-red: #f23207;
+$accent-red: #d9310b;
+$black-red: #8c2d18;
+
+$header-height: 72px;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+a,
+button {
+  all: unset;
+}
+
+.container {
+  margin: auto;
+  padding: 0 120px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.link {
+  color: $light;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+
+  &:hover {
+    color: $accent-red;
+  }
+}
+
+.btn {
+  background-color: $light;
+  color: $black;
+  padding: 11px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $light;
+    background-color: $back-red;
+  }
+}
+
+.header {
+  margin-top: 32px;
+  height: 40;
+  display: flex;
+
+  &__logo {
+    width: 82px;
+    height: 36px;
+    margin-right: auto;
+    margin-left: 1px;
+  }
+
+  &__nav {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+
+    & > li {
+      margin-left: 30px;
+      text-transform: uppercase;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin: -4px -1px 0px 41px;
+      }
+    }
+  }
+}
+
+.main {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: calc(100vh - $header-height);
+  width: 100%;
+  box-sizing: border-box;
+
+  &__decorline {
+    position: absolute;
+    top: -27px;
+    left: -3px;
+  }
+
+  &__title {
+    position: relative;
+    color: $light;
+    font-size: 715px;
+    line-height: 1;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: -10px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    position: absolute;
+    color: $accent-red;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3.85px;
+    left: 30px;
+    top: -10.5px;
+  }
+}
