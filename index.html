@@ -11,7 +11,8 @@
     <title>Билеты на Марс</title>
   </head>
   <body>
-    <div class="container">
+    <div class="perlinback"></div>
+    <div class="wrapper">
       <header class="header">
           <div class="header__logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="82" height="36" viewBox="0 0 82 36" fill="#F23207">
@@ -30,28 +31,31 @@
             <li><button class="btn">Купить билеты</button></li>
           </ul>
       </header>
-      <section class="main">
-        <!-- TODO: Продумать структуру html -->
-        <!-- 
-          План на 02.02.2024 
-          1. Сделать плавающий фон
-          2. Вставить видео в текст
-          3. Сделать адаптив (бургер меню)
 
-          Желательно без css библиотек
-        -->
-        <div class="main__title">
-          MAPC
-          <div class="main__subtitle">Точка назначения:</div>
-          <div class="main__decorline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="605" viewBox="0 0 10 605" fill="none">
-              <path d="M4 3H6V600H4V3Z" fill="#D9D9D9"/>
-              <circle cx="5" cy="3" r="3" fill="#D9D9D9"/>
-              <circle cx="5" cy="600" r="5" fill="#D9D9D9"/>
-            </svg>
-          </div>
+      <main class="main">
+        <div class="main__subtitle">Точка назначения:</div>
+        <div class="text-video main__text-video">
+          <video class="text-video__video" muted loop autoplay>
+            <source src="assets/mars.m4v"></source>
+          </video>
+          <svg class="text-video__svg" viewBox="0 0 328.5 147.35" style="clip-rule:evenodd" clipPathUnits="objectBoundingBox">
+              <clipPath id="clipPathMars">
+                <path d="M290.9.09a49.76,49.76,0,0,1,18.65,2.44q14.94,6.4,17.93,22.52.58,3.27.86,6.59.21,9.33.14,18.65H307q.06-8.9-.15-17.79-.37-11.13-11.47-11.76-11.1.63-11.48,11.76-.28,41.18,0,82.34,1,12.36,13.34,11.33,7.19-.87,9-7.89a22.24,22.24,0,0,0,.57-3.44q.23-11.48.15-23h21.51q.07,11.91-.14,23.81a34.5,34.5,0,0,1-11,24.82,32.46,32.46,0,0,1-18.36,6.59,42,42,0,0,1-22.95-4A30,30,0,0,1,262.36,124a54.6,54.6,0,0,1-1.15-7.17q-.29-43.18,0-86.35Q263.72,3.09,290.9.09Z"/>
+                <path d="M0,1.81H31.56q8.19,50.49,16.49,101Q55.7,52.45,63.26,2.09,79.07,1.67,95,1.81V145.54H73.44q.07-50.49-.14-101Q65.74,94.77,58.09,145a207.84,207.84,0,0,1-21.66.58Q28.2,95.77,19.94,46q-.23,49.77-.15,99.55H0Z"/>
+                <path d="M125.08,1.81h33.28q11.52,71.85,22.95,143.73-11.48.14-22.95-.29l-4-25.53q-13.72-.57-27.39,0-1.92,12.92-3.88,25.82H102.13Q113.56,73.66,125.08,1.81Zm15.49,27.25q5.58,35.34,10.62,70.86H130Q135.06,64.44,140.57,29.06Z"/>
+                <path d="M188.48,1.81q19.23-.08,38.44.14,20.45,1.23,26.83,20.51a46.16,46.16,0,0,1,1.72,9.47q.28,14.63,0,29.26A33.5,33.5,0,0,1,245,84.86a32.63,32.63,0,0,1-18.08,6.6q-7.74.21-15.49.14v53.94h-23Zm23,20.65a129.25,129.25,0,0,1,14.06.43,9.62,9.62,0,0,1,7,8.47,275.62,275.62,0,0,1,0,30.69,9.47,9.47,0,0,1-7.32,8.47,123.9,123.9,0,0,1-13.77.43Z"/>
+              </clipPath>
+          </svg>
         </div>
-      </section>
+        <div class="main__line">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="605" viewBox="0 0 10 605" fill="none">
+            <path d="M4 3H6V600H4V3Z" fill="#D9D9D9"/>
+            <circle cx="5" cy="3" r="3" fill="#D9D9D9"/>
+            <circle cx="5" cy="600" r="5" fill="#D9D9D9"/>
+          </svg>
+        </div> 
+      </main>
+
     </div>
     <script type="module" src="/main.js"></script>
   </body>
