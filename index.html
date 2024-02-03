@@ -11,6 +11,7 @@
     <title>Билеты на Марс</title>
   </head>
   <body>
+    <div class="starsback"></div>
     <div class="perlinback"></div>
     <div class="wrapper">
       <header class="header">
@@ -53,15 +54,55 @@
               </clipPath>
           </svg>
         </div>
-        <div class="main__line">
-          <svg width="10" height="605" viewBox="0 0 10 605" fill="none">
+        <div class="line main__line">
+          <svg class="line__svg" width="10" height="605" viewBox="0 0 10 605" fill="none">
             <path id="decorLine" d="M4 3H6V600H4V3Z" fill="#D9D9D9"/>
             <circle cx="5" cy="3" r="3" fill="#D9D9D9"/>
             <circle id="decorLineEnd" cx="5" cy="600" r="5" fill="#D9D9D9"/>
           </svg>
         </div> 
       </main>
+    </div>
 
+    <div class="service-form">
+      <div class="wrapper service-form__wrapper">
+        <div class="service-form__head">
+          <h2 class="service-form__title">Бронирование<br>билетов</h2>
+          <button class="service-form__btn-close">close</button>
+        </div>
+        <div class="service-form__body">
+          <div class="service-form__input-block">
+            <label class="service-form__label" for="dateFrom">Дата заезда</label>
+            <input
+              class="service-form__input"
+              type="text"
+              name="dateFrom"
+              id="dateFrom"
+              value="13.02.2022"
+            >
+          </div>
+          <div class="service-form__input-block">
+            <label class="service-form__label" for="dateTo">Дата выезда</label>
+            <input
+              class="service-form__input"
+              type="text"
+              name="dateTo"
+              id="dateTo"
+              value="13.02.2032"
+            >
+          </div>
+          <div class="service-form__input-block">
+            <label class="service-form__label" for="humansCount">Количество</label>
+              <input
+                class="service-form__input"
+                type="text"
+                name="humansCount"
+                id="humansCount"
+              >
+              <!-- <div class="service-form__humans">человек</div> -->
+          </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

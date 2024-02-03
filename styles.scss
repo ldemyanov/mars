@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./assets/bebas-neue.ttf"),
+}
+
 $black: #262526;
 $light: #f2e1c2;
 $back-red: #f23207;
@@ -8,10 +13,7 @@ body {
   min-width: 480px;
   margin: 0;
   padding: 0;
-  background-image: url("./assets/background.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: black;
 }
 
 h1 {
@@ -26,8 +28,43 @@ button {
   all: unset;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  background-color: initial;
+  border: initial;
+  padding: initial;
+  margin: initial;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+
+.starsback {
+  position: fixed;
+  z-index: -2;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background-image: url("./assets/background.png");
+  background-position-x: left;
+  background-attachment: fixed;
+  animation-fill-mode: forwards;
+  animation-duration: 0.3s;
+}
+
 .perlinback {
   position: fixed;
+  z-index: -1;
   top: 0;
   margin: 0;
   padding: 0;
@@ -36,9 +73,6 @@ button {
   width: 100%;
   opacity: 0.15;
   background-image: url("./assets/perlinback.png");
-  background-position-x: center;
-  animation-fill-mode: forwards;
-  animation-duration: 0.3s;
 }
 
 .wrapper {
@@ -337,5 +371,63 @@ button {
   }
   100% {
     background-position-x: center;
+  }
+}
+
+
+
+/* service form */
+
+.service-form {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $light;
+
+  &__wrapper {
+    margin-top: 100px;
+  }
+
+  &__head {
+    position: relative;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Bebas Neue";
+    font-weight: 400;
+    font-size: 114px;
+  }
+
+  &__body {
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__input-block {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__humans {
+    position: absolute;
+    
+  }
+
+  &__input {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $black;
   }
 }

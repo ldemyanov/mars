@@ -11,5 +11,9 @@
   "devDependencies": {
     "sass": "^1.70.0",
     "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "imask": "^7.3.0"
   }
 }
