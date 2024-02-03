@@ -1,7 +1,13 @@
 import './styles.scss'
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   const movingBackground = document.querySelector('.perlinback');
+  const clipPath = document.querySelector('#clipPathMars');
+  const burger = document.querySelector('.burger');
+  const decorLine = document.querySelector('#decorLine');
+  const decorLineEnd = document.querySelector('#decorLineEnd');
+  const mainBlock = document.querySelector('.main');
+  const textVideo = document.querySelector('.text-video');
 
   const position = {
     current: 'Center',
@@ -9,9 +15,12 @@ window.addEventListener("load", () => {
   }
 
   const initJs = () => {
+    resizeDecorLine();
     resizeClipPath();
     document.body.addEventListener('mousemove', animateBackground);
     window.addEventListener('resize', resizeClipPath);
+    window.addEventListener('resize', resizeDecorLine);
+    burger.addEventListener('click', toggleBurgerButton);
   }
 
   const animateBackground = (e) => {
@@ -47,10 +56,19 @@ window.addEventListener("load", () => {
 
   const resizeClipPath = () => {
     const clipPathDefaultWidth = 328.5;
-    const clipPath = document.querySelector('#clipPathMars');
-    const newWidth = document.querySelector('.text-video').getBoundingClientRect().width;
+    const newWidth = textVideo.getBoundingClientRect().width;
 
     clipPath.style.transform = `scale(${newWidth / clipPathDefaultWidth})`;
+  }
+
+  const toggleBurgerButton = () => {
+    burger.classList.toggle('open');
+  }
+
+  const resizeDecorLine = () => {
+    const newHeight = mainBlock.getBoundingClientRect().height;
+    decorLine.setAttribute('d', `M4 3H6V${newHeight}H4V3Z`);
+    decorLineEnd.setAttribute('cy', newHeight);
   }
 
   initJs();

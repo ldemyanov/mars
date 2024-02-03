@@ -4,9 +4,8 @@ $back-red: #f23207;
 $accent-red: #d9310b;
 $black-red: #8c2d18;
 
-$header-height: 72px;
-
 body {
+  min-width: 480px;
   margin: 0;
   padding: 0;
   background-image: url("./assets/background.png");
@@ -33,6 +32,7 @@ button {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  height: 100%;
   width: 100%;
   opacity: 0.15;
   background-image: url("./assets/perlinback.png");
@@ -45,11 +45,23 @@ button {
   margin: auto;
   position: relative;
   z-index: 2;
-  padding: 0 120px;
+  padding: 0 5px 0 10px;
   max-width: 1440px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+
+  @media (min-width: 540px) {
+    padding: 0 45px;
+  }
+
+  @media (min-width: 960px) {
+    padding: 0 60px;
+  }
+
+  @media (min-width: 1180px) {
+    padding: 0 120px;
+  }
 }
 
 .link {
@@ -67,15 +79,22 @@ button {
 .btn {
   background-color: $light;
   color: $black;
-  padding: 11px 15px;
+  padding: 6px 10px;
   border-radius: 4px;
   font-weight: 600;
   transition: 0.3s ease;
   cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
 
   &:hover {
     color: $light;
     background-color: $back-red;
+  }
+
+  @media (min-width: 960px) {
+    padding: 11px 15px;
+    font-size: 16px;
   }
 }
 
@@ -92,9 +111,13 @@ button {
   }
 
   &__nav {
-    display: flex;
+    display: none;
     list-style-type: none;
     align-items: center;
+
+    @media (min-width: 960px) {
+      display: flex;
+    }
 
     & > li {
       margin-left: 30px;
@@ -103,32 +126,53 @@ button {
       &:first-child {
         margin-left: 0;
       }
+    }
+  }
 
-      &:last-child {
-        margin: -1px -1px 0px 41px;
-      }
+  &__btn {
+    margin: -1px -1px 0px 41px;
+  }
+
+  &__burger {
+    display: block;
+    align-self: center;
+    margin: 3px 20px 0;
+
+    @media (min-width: 960px) {
+      display: none;
     }
   }
 }
 
 .main {
   position: relative;
-  margin-top: 120px;
+  margin-top: 45px;
   padding-left: 33px;
+
+  @media (min-width: 960px) {
+    margin-top: 120px;
+  }
 
   &__line {
     position: absolute;
+    display: block;
     top: 0;
     left: -3px;
+    height: 100%;
+    animation: expandHeight 0.5s ease-out;
   }
 
   &__subtitle {
     color: $accent-red;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.1px;
     padding-top: 12px;
+
+    @media (min-width: 960px) {
+      font-size: 36px;
+    }
   }
 
   &__text-video {
@@ -158,6 +202,105 @@ button {
     top: 0;
     left: 0;
     width: 100%;
+  }
+}
+
+/* burger icon */
+
+.burger {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition-duration: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__left {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: 4px;
+    width: 15px;
+    top: 10px;
+    background-color: $light;
+    left: 0px;
+
+    &:before {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      background-color: $light;
+      content: "";
+      top: -10px;
+    }
+
+    &:after {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      background-color: $light;
+      content: "";
+      top: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: 4px;
+    width: 15px;
+    top: 10px;
+    background-color: $light;
+    left: 15px;
+
+    &:before {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      background-color: $light;
+      content: "";
+      top: -10px;
+    }
+
+    &:after {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      background-color: $light;
+      content: "";
+      top: 10px;
+    }
+  }
+
+  &.open &__left {
+    transition-duration: 0.5s;
+    background: transparent;
+    &:before {
+      transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+    }
+    &:after {
+      transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+    }
+  }
+
+  &.open &__right {
+    transition-duration: 0.5s;
+    background: transparent;
+    &:before {
+      transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+    }
+    &:after {
+      transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+    }
   }
 }
 
