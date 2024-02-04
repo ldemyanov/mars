@@ -68,7 +68,12 @@
       <div class="wrapper service-form__wrapper">
         <div class="service-form__head">
           <h2 class="service-form__title">Бронирование<br>билетов</h2>
-          <button class="service-form__btn-close">close</button>
+          <button class="service-form__btn-close">
+            <svg width="12" height="12" viewBox="0 0 12 12">
+              <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z"/>
+              <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z"/>
+            </svg>
+          </button>
         </div>
         <div class="service-form__body">
           <div class="service-form__input-block">
@@ -98,9 +103,14 @@
                 type="text"
                 name="humansCount"
                 id="humansCount"
+                value="1"
               >
-              <!-- <div class="service-form__humans">человек</div> -->
           </div>
+        </div>
+        <div class="service-form__footer">
+          <button class="service-form__btn-buy">
+            Купить билеты
+          </button>
         </div>
       </div>
     </div>

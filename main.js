@@ -178,13 +178,6 @@ window.addEventListener('load', () => {
     )
   }
 
-  // var maskOptions = {
-  //   lazy: false, // <-- HERE
-  //   mask: 'num €',
-  //   blocks: {
-  //     num: {
-  //       mask: Number
-
   const setPeopleInput = (selector) => {
     IMask(
       document.querySelector(selector),
@@ -194,8 +187,8 @@ window.addEventListener('load', () => {
         blocks: {
           num: {
             mask: IMask.MaskedRange,
-            from: 0,
-            to: 20,
+            from: 1,
+            to: 9,
             autofix: 'pad',
             signed: true,
             placeholderChar: '#'

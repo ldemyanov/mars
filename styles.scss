@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bebas Neue";
-  src: url("./assets/bebas-neue.ttf"),
+  src: url("./assets/bebas-neue.ttf");
 }
 
 $black: #262526;
@@ -42,9 +42,8 @@ input {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0; 
+  margin: 0;
 }
-
 
 .starsback {
   position: fixed;
@@ -374,10 +373,6 @@ input::-webkit-inner-spin-button {
   }
 }
 
-
-
-/* service form */
-
 .service-form {
   z-index: 10;
   position: fixed;
@@ -388,7 +383,7 @@ input::-webkit-inner-spin-button {
   background-color: $light;
 
   &__wrapper {
-    margin-top: 100px;
+    margin-top: 89px;
   }
 
   &__head {
@@ -397,8 +392,16 @@ input::-webkit-inner-spin-button {
 
   &__btn-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 11px;
+    right: 3px;
+    background: $black;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: $light;
+    cursor: pointer;
   }
 
   &__title {
@@ -406,10 +409,12 @@ input::-webkit-inner-spin-button {
     font-family: "Bebas Neue";
     font-weight: 400;
     font-size: 114px;
+    line-height: 1;
+    letter-spacing: 3.1px;
   }
 
   &__body {
-    margin-top: 80px;
+    margin-top: 94px;
     display: flex;
     gap: 20px;
   }
@@ -421,13 +426,29 @@ input::-webkit-inner-spin-button {
     gap: 20px;
   }
 
-  &__humans {
-    position: absolute;
-    
+  &__label {
+    font-weight: 600;
   }
 
   &__input {
     padding-bottom: 10px;
     border-bottom: 2px solid $black;
+  }
+
+  &__footer {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__btn-buy {
+    display: block;
+    background-color: $black;
+    text-transform: uppercase;
+    padding: 10px 120px;
+    color: $light;
+    border-radius: 4px;
+    cursor: pointer;
   }
 }
