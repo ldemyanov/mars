@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <title>Билеты на Марс</title>
+    <script type="module" crossorigin src="index-dfp9Zi9u.js"></script>
+    <link rel="stylesheet" crossorigin href="index-gBTNw7sM.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
   </head>
   <body>
     <div class="starsback"></div>
     <div class="perlinback"></div>
-    <div class="wrapper">
+    <div id="mainContent" class="wrapper">
       <header class="header">
         <div class="header__logo">
           <svg width="82" height="36" viewBox="0 0 82 36" fill="#F23207">
@@ -43,7 +47,7 @@
         <div class="main__subtitle">Точка назначения:</div>
         <div class="text-video main__text-video">
           <video class="text-video__video" muted loop autoplay>
-            <source src="assets/mars.m4v"></source>
+            <source src="mars-9Oua1VCT.m4v"></source>
           </video>
           <svg class="text-video__svg" viewBox="0 0 328.5 147.35" style="clip-rule:evenodd">
               <clipPath id="clipPathMars">
@@ -68,7 +72,7 @@
       <div class="wrapper service-form__wrapper">
         <div class="service-form__head">
           <h2 class="service-form__title">Бронирование<br>билетов</h2>
-          <button class="service-form__btn-close">
+          <button class="btn-close service-form__btn-close">
             <svg width="12" height="12" viewBox="0 0 12 12">
               <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z"/>
               <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z"/>
@@ -114,6 +118,28 @@
         </div>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
+
+    <div class="mobile-menu">
+      <div class="wrapper mobile-menu__wrapper">
+        <button class="btn-close mobile-menu__btn-close">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z"/>
+            <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z"/>
+          </svg>
+        </button>
+        <ul class="mobile-menu__ul">
+          <li><a class="link" href="#">О марсе</a></li>
+          <li><a class="link" href="#">Процесс</a></li>
+          <li><a class="link" href="#">Билеты</a></li>
+          <li><a class="link" href="#">Новости</a></li>
+          <li><a class="link" href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="polyfills-legacy-YkIG9een.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="index-legacy-QCCkgjlh.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
   </body>
 </html>
