@@ -90,6 +90,7 @@ window.addEventListener('load', () => {
     const clipPathDefaultWidth = 328.5;
     const newWidth = textVideo.getBoundingClientRect().width;
 
+    textVideo.classList.add('text-video_loaded');
     clipPath.style.transform = `scale(${newWidth / clipPathDefaultWidth})`;
   }
 
@@ -100,20 +101,6 @@ window.addEventListener('load', () => {
   }
 
   const runInitialGSAPanimations = () => {
-    gsap.fromTo(
-      '.line__svg',
-      {
-        height: '0%',
-      },
-      {
-        height: '100%',
-        duration: 1,
-        onComplete: () => {
-          document.querySelector('.line__svg').removeAttribute('style');
-        }
-      }
-    );
-
     gsap.fromTo(
       '.line__svg',
       {
