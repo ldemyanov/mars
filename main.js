@@ -41,6 +41,8 @@ window.addEventListener('load', () => {
     serviceCloseBtn.addEventListener('click', () => {
       timelines = runInitialGSAPanimations();
       closePageElement(mainContent, serviceForm, 'service-form_open');
+      resizeDecorLine();
+      resizeClipPath();
     });
 
     burger.addEventListener('click', () => {
@@ -51,6 +53,8 @@ window.addEventListener('load', () => {
     mobileMenuBtnClose.addEventListener('click', () => {
       timelines = runInitialGSAPanimations();
       closePageElement(mainContent, mobileMenu, 'mobile-menu_open');
+      resizeDecorLine();
+      resizeClipPath();
     });
   }
 
