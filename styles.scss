@@ -131,6 +131,22 @@ input::-webkit-inner-spin-button {
   }
 }
 
+.btn-close {
+  background: $black;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: $light;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+
+  &:hover {
+    fill: $accent-red;
+  }
+}
+
 .header {
   margin-top: 32px;
   height: 40px;
@@ -244,14 +260,12 @@ input::-webkit-inner-spin-button {
   position: relative;
   width: 30px;
   height: 30px;
-  transition-duration: 0.5s;
 
   &:hover {
     cursor: pointer;
   }
 
   &__left {
-    transition-duration: 0.5s;
     position: absolute;
     height: 4px;
     width: 15px;
@@ -260,7 +274,6 @@ input::-webkit-inner-spin-button {
     left: 0px;
 
     &:before {
-      transition-duration: 0.5s;
       position: absolute;
       width: 15px;
       height: 4px;
@@ -270,7 +283,6 @@ input::-webkit-inner-spin-button {
     }
 
     &:after {
-      transition-duration: 0.5s;
       position: absolute;
       width: 15px;
       height: 4px;
@@ -285,7 +297,6 @@ input::-webkit-inner-spin-button {
   }
 
   &__right {
-    transition-duration: 0.5s;
     position: absolute;
     height: 4px;
     width: 15px;
@@ -294,7 +305,6 @@ input::-webkit-inner-spin-button {
     left: 15px;
 
     &:before {
-      transition-duration: 0.5s;
       position: absolute;
       width: 15px;
       height: 4px;
@@ -304,35 +314,12 @@ input::-webkit-inner-spin-button {
     }
 
     &:after {
-      transition-duration: 0.5s;
       position: absolute;
       width: 15px;
       height: 4px;
       background-color: $light;
       content: "";
       top: 10px;
-    }
-  }
-
-  &.open &__left {
-    transition-duration: 0.5s;
-    background: transparent;
-    &:before {
-      transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
-    }
-    &:after {
-      transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
-    }
-  }
-
-  &.open &__right {
-    transition-duration: 0.5s;
-    background: transparent;
-    &:before {
-      transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
-    }
-    &:after {
-      transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
     }
   }
 }
@@ -373,6 +360,55 @@ input::-webkit-inner-spin-button {
   }
 }
 
+.mobile-menu {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $light;
+  height: 100%;
+  display: none;
+
+  &_open {
+    display: block;
+    opacity: 0;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  &__ul {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 30px;
+  }
+
+  &__ul .link {
+    color: $black;
+    font-size: 32px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent-red;
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+}
+
 .service-form {
   z-index: 10;
   position: fixed;
@@ -381,6 +417,13 @@ input::-webkit-inner-spin-button {
   left: 0;
   right: 0;
   background-color: $light;
+  display: none;
+
+  &_open {
+    display: block;
+    opacity: 0;
+    visibility: visible;
+  }
 
   &__wrapper {
     margin-top: 89px;
@@ -388,35 +431,56 @@ input::-webkit-inner-spin-button {
 
   &__head {
     position: relative;
+    margin: 0 0;
+
+    @media (min-width: 730px) {
+      margin: 0 50px;
+    }
+
+    @media (min-width: 960px) {
+      margin: 0 0;
+    }
   }
 
   &__btn-close {
     position: absolute;
     top: 11px;
     right: 3px;
-    background: $black;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    fill: $light;
-    cursor: pointer;
   }
 
   &__title {
     margin: 0;
     font-family: "Bebas Neue";
     font-weight: 400;
-    font-size: 114px;
+    font-size: 60px;
     line-height: 1;
     letter-spacing: 3.1px;
+
+    @media (min-width: 730px) {
+      font-size: 80px;
+    }
+
+    @media (min-width: 960px) {
+      font-size: 114px;
+    }
   }
 
   &__body {
-    margin-top: 94px;
+    margin: 50px 0 0;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 730px) {
+      margin: 70px 50px 0;
+    }
+
+    @media (min-width: 960px) {
+      margin: 94px 0 0;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
   }
 
   &__input-block {
@@ -438,17 +502,31 @@ input::-webkit-inner-spin-button {
   &__footer {
     height: 100px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
+
+    @media (min-width: 960px) {
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
   }
 
   &__btn-buy {
     display: block;
     background-color: $black;
     text-transform: uppercase;
-    padding: 10px 120px;
+    padding: 10px 90px;
     color: $light;
     border-radius: 4px;
     cursor: pointer;
+    transition: color 0.3s ease;
+
+    @media (min-width: 960px) {
+      padding: 10px 120px;
+    }
+
+    &:hover {
+      color: $accent-red;
+    }
   }
 }

@@ -13,7 +13,7 @@
   <body>
     <div class="starsback"></div>
     <div class="perlinback"></div>
-    <div class="wrapper">
+    <div id="mainContent" class="wrapper">
       <header class="header">
         <div class="header__logo">
           <svg width="82" height="36" viewBox="0 0 82 36" fill="#F23207">
@@ -68,7 +68,7 @@
       <div class="wrapper service-form__wrapper">
         <div class="service-form__head">
           <h2 class="service-form__title">Бронирование<br>билетов</h2>
-          <button class="service-form__btn-close">
+          <button class="btn-close service-form__btn-close">
             <svg width="12" height="12" viewBox="0 0 12 12">
               <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z"/>
               <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z"/>
@@ -114,6 +114,25 @@
         </div>
       </div>
     </div>
+
+    <div class="mobile-menu">
+      <div class="wrapper mobile-menu__wrapper">
+        <button class="btn-close mobile-menu__btn-close">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z"/>
+            <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z"/>
+          </svg>
+        </button>
+        <ul class="mobile-menu__ul">
+          <li><a class="link" href="#">О марсе</a></li>
+          <li><a class="link" href="#">Процесс</a></li>
+          <li><a class="link" href="#">Билеты</a></li>
+          <li><a class="link" href="#">Новости</a></li>
+          <li><a class="link" href="#">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

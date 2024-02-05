@@ -3,6 +3,7 @@ import IMask from 'imask';
 import './styles.scss'
 
 window.addEventListener('load', () => {
+  const mainContent = document.querySelector('#mainContent');
   const movingBackground = document.querySelector('.starsback');
   const clipPath = document.querySelector('#clipPathMars');
   const burger = document.querySelector('.burger');
@@ -10,6 +11,11 @@ window.addEventListener('load', () => {
   const decorLineEnd = document.querySelector('#decorLineEnd');
   const mainBlock = document.querySelector('.main');
   const textVideo = document.querySelector('.text-video');
+  const headerBtn = document.querySelector('.header__btn');
+  const serviceForm = document.querySelector('.service-form');
+  const serviceCloseBtn = document.querySelector('.service-form__btn-close');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuBtnClose = document.querySelector('.mobile-menu__btn-close');
 
   const position = {
     current: 'Center',
@@ -20,11 +26,32 @@ window.addEventListener('load', () => {
     setMasksForForms();
     resizeDecorLine();
     resizeClipPath();
+
     document.body.addEventListener('mousemove', animateBackground);
     window.addEventListener('resize', resizeClipPath);
     window.addEventListener('resize', resizeDecorLine);
-    burger.addEventListener('click', toggleBurgerButton);
-    runInitialGSAPanimations();
+
+    let timelines = runInitialGSAPanimations();
+
+    headerBtn.addEventListener('click', () => {
+      timelines.forEach((tl) => tl.pause());
+      openPageElement(mainContent, serviceForm, 'service-form_open');
+    });
+
+    serviceCloseBtn.addEventListener('click', () => {
+      timelines = runInitialGSAPanimations();
+      closePageElement(mainContent, serviceForm, 'service-form_open');
+    });
+
+    burger.addEventListener('click', () => {
+      timelines.forEach((tl) => tl.pause());
+      openPageElement(mainContent, mobileMenu, 'mobile-menu_open');
+    });
+
+    mobileMenuBtnClose.addEventListener('click', () => {
+      timelines = runInitialGSAPanimations();
+      closePageElement(mainContent, mobileMenu, 'mobile-menu_open');
+    });
   }
 
   const animateBackground = (e) => {
@@ -64,10 +91,6 @@ window.addEventListener('load', () => {
     const newWidth = textVideo.getBoundingClientRect().width;
 
     clipPath.style.transform = `scale(${newWidth / clipPathDefaultWidth})`;
-  }
-
-  const toggleBurgerButton = () => {
-    burger.classList.toggle('open');
   }
 
   const resizeDecorLine = () => {
@@ -135,7 +158,6 @@ window.addEventListener('load', () => {
     );
 
     const tlForBack = gsap.timeline({ repeat: -1 });
-
     const xStore = { x: 0 };
     const moveX = (dx) => (xStore.x += dx, xStore.x);
 
@@ -159,7 +181,9 @@ window.addEventListener('load', () => {
         duration: 2.5,
         ease: 'none',
       },
-    )
+    );
+
+    return [tlForBack, tl];
   }
 
   const setDateMask = (selector) => {
@@ -196,6 +220,51 @@ window.addEventListener('load', () => {
         }
       }
     )
+  }
+
+  const openPageElement = (targetPage, element, openClass) => {
+    targetPage.style.display = "none";
+    element.classList.add(openClass);
+    gsap.fromTo(
+      `.${openClass}`,
+      {
+        opacity: 0.5,
+        top: -100,
+        right: -100,
+        borderBottomLeftRadius: 500,
+      },
+      {
+        opacity: 1,
+        top: 0,
+        right: 0,
+        duration: 1,
+        borderBottomLeftRadius: 0,
+      }
+    );
+  }
+
+  const closePageElement = (targetPage, element, openClass) => {
+    targetPage.style.display = "block";
+    gsap.fromTo(
+      `.${openClass}`,
+      {
+        opacity: 1,
+        top: 0,
+        right: 0,
+        borderBottomLeftRadius: 0,
+        borderBottomLeftRadius: 500,
+      },
+      {
+        opacity: 0,
+        top: -100,
+        right: -100,
+        duration: 1,
+        onComplete: () => {
+          element.removeAttribute('style');
+          element.classList.remove(openClass);
+        }
+      }
+    );
   }
 
   const setMasksForForms = () => {
