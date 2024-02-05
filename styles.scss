@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bebas Neue";
-  src: url("./assets/bebas-neue.ttf");
+  src: url("/assets/bebas-neue.ttf");
 }
 
 $black: #262526;
@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background-image: url("./assets/background.png");
+  background-image: url("/assets/background.png");
   background-position-x: left;
   background-attachment: fixed;
   animation-fill-mode: forwards;
@@ -71,7 +71,7 @@ input::-webkit-inner-spin-button {
   height: 100%;
   width: 100%;
   opacity: 0.15;
-  background-image: url("./assets/perlinback.png");
+  background-image: url("/assets/perlinback.png");
 }
 
 .wrapper {

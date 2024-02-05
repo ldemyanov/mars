@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import IMask from 'imask';
-import './styles.scss'
+import '/styles.scss';
 
 window.addEventListener('load', () => {
   const mainContent = document.querySelector('#mainContent');
